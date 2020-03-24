@@ -101,6 +101,17 @@ last()
 }
 allreset()
 {
+   this.running = false;
+    this.startText = 'Start';
+    this.counter = undefined;
+    this.milliseconds = '00',
+      this.seconds = '00',
+      this.minutes = '00';
+    this.laps = [];
+    this.activity=[];
+    this.btnEnd=true;
+    this.btnDisabled=true;
+ 
   this.history =[];
   console.log(this.history);
 }
