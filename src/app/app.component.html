@@ -1,0 +1,43 @@
+<div align="center" style="margin-top:100px">
+<hello name="{{ name }}"></hello>
+<p>
+Track your activity here
+</p>
+<div>
+  <form >
+
+<form >
+  <div class="form-group" style="width:300px">
+    <label for="exampleFormControlSelect1">Select Your Activity</label>
+    <select class="form-control" (change)="send($event)">
+      <option>Choose any one Option</option>
+      <option>CODING & DESIGN</option>
+      <option>DOCUMENTATION</option>
+      
+    </select>
+  </div>
+</form>
+ 
+  <div  >
+    <button [disabled]="btnDisabled" class="btn btn-primary"(click)="dostart()">Start Activity</button>
+    <button [disabled]="btnEnd"  style="margin-left:20px" class="btn btn-primary" (click)="stop()">End Activity</button>
+  </div>
+   <div>
+   <button style="margin-top:20px;margin-left:10px" class="btn btn-primary"(click)="reset()">Reset</button>
+  </div>
+  </form>
+  	<section class="timer-counter-label" style="margin-top:15px;width:50px">
+		<div *ngIf="counter" >
+			<span >{{minutes}}:</span><span>{{seconds}}:</span> <span>{{milliseconds}}</span> </div>
+		<div *ngIf="!counter" >
+		
+			<span>{{minutes}}:</span><span>{{seconds}}:</span> <span>{{milliseconds}}</span>
+		</div>
+	</section>
+  <h6>
+    The activity of yours is <span style="color:red">{{this.activity}} </span> 
+</h6>
+<h6>
+  Time you have taken to Complete this Activity <span style="color:red">{{this.laps}}</span> 
+</h6>
+</div>
