@@ -13,7 +13,7 @@ export class AppComponent implements OnDestroy {
   minutes: any = '00';
   seconds: any = '00';
   milliseconds: any = '00';
- 
+ history:any = [];
   @Input() start: boolean;
 
    
@@ -89,9 +89,19 @@ export class AppComponent implements OnDestroy {
     clearInterval(this.timerRef);
     this.laps.push(lapTime);
     console.log(this.laps)
-   
-    this.selectedyear = [...this.activity];
+
+   this.history.push({'Activity':this.activity,'Time':this.laps});
+   console.log(this.history);
     console.log("The activity you choose is "+this.activity +" the duration of the time is"+this.laps)
   }
-
+last()
+{
+  this.history.splice(-1,1);
+  console.log(this.history);
+}
+allreset()
+{
+  this.history =[];
+  console.log(this.history);
+}
 }
